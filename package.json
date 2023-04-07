@@ -1,20 +1,24 @@
 {
-  "name": "vitech-massage-appointment",
+  "name": "calendar-appointment-telegram-bot",
   "version": "1.0.0",
-  "description": "A Telegram bot for scheduling appointments",
-  "main": "app.ts",
-  "type": "module",
+  "description": "Telegram bot for scheduling appointments",
+  "main": "app.js",
   "scripts": {
-    "build": "tsc",
     "start": "node dist/app.js",
-    "dev": "nodemon src/app.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --respawn --transpile-only app.ts",
+    "build": "webpack"
   },
-  "author": "akogut",
+  "keywords": [
+    "telegram",
+    "bot",
+    "calendar",
+    "appointment"
+  ],
+  "author": "Andrii Kogut",
   "license": "MIT",
   "dependencies": {
     "@types/express": "^4.17.13",
-    "@types/node": "^16.11.7",
+    "@types/node": "^16.11.17",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "google-auth-library": "^7.8.2",
@@ -27,6 +31,9 @@
     "@types/node-telegram-bot-api": "^0.61.6 ",
     "nodemon": "^2.0.15",
     "ts-node": "^10.2.1",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
   }
 }
