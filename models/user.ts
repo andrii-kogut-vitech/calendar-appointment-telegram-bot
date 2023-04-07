@@ -1,7 +1,6 @@
 export interface User {
     id: string;
-    firstName: string;
-    lastName: string;
-    username: string;
+    name: string;
+    email: string;
     appointments: string[];
 }

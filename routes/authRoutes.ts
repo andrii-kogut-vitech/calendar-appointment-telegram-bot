@@ -1,8 +1,8 @@
 import express from 'express';
-import { authController } from '../controllers/authController';
+import { authenticate } from '../controllers/authController';
 
-export const authRoutes = express.Router();
+const router = express.Router();
 
-authRoutes.get('/start', authController.startAuthFlow);
-authRoutes.get('/complete', authController.completeAuthFlow);
-authRoutes.get('/logout', authController.logout);
+router.get('/authenticate', authenticate);
+
+export { router as authRoutes };
