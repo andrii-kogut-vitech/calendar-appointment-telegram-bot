@@ -6,7 +6,14 @@ import { appointmentRoutes } from './routes/appointmentRoutes';
 
 const app = express();
 
+const loggerMiddleware = (req: Request, res: Response, next: NextFunction) => {
+    console.log(`${req.method} ${req.url}`);
+    next();
+};
+
 app.use(express.json());
+app.use(loggerMiddleware);
+
 
 // Routes
 app.use('/auth', authRoutes);

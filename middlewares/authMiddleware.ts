@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-export const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
+const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
     const { user } = req.session;
 
     if (!user || !user.tokens || !user.tokens.access_token) {
@@ -9,3 +9,5 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
 
     next();
 };
+
+export { authMiddleware };
